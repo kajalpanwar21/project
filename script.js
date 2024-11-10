@@ -1,16 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const calorieForm = document.getElementById('calorieForm');
-    const membershipForm = document.getElementById('membershipForm');
+    const careCostForm = document.getElementById('careCostForm');
+    const adoptionForm = document.getElementById('adoptionForm');
     const contactForm = document.getElementById('contactForm');
 
-    calorieForm.addEventListener('submit', (event) => {
+    careCostForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        calculateCalories();
+        calculateCareCost();
     });
 
-    membershipForm.addEventListener('submit', (event) => {
+    adoptionForm.addEventListener('submit', (event) => {
         event.preventDefault();
-        alert('Membership inquiry submitted!');
+        alert('Adoption inquiry submitted!');
     });
 
     contactForm.addEventListener('submit', (event) => {
@@ -19,9 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
-function calculateCalories() {
-    const intensity = document.getElementById('intensity').value;
+function calculateCareCost() {
+    const petType = document.getElementById('petType').value;
     const duration = document.getElementById('duration').value;
-    const calories = intensity * duration * 1.2; // Simple formula for demo purposes
-    document.getElementById('caloriesResult').textContent = `You burned approximately ${calories} calories.`;
+    let costPerMonth = 0;
+    
+    switch (petType) {
+        case 'dog':
+            costPerMonth = 50;
+            break;
+        case 'cat':
+            costPerMonth = 40;
+            break;
+        case 'rabbit':
+            costPerMonth = 30;
+            break;
+    }
+
+    const totalCost = costPerMonth * duration;
+    document.getElementById('careCostResult').textContent = `The estimated care cost for your pet is $${totalCost}.`;
 }
