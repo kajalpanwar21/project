@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gym Website</title>
+    <title>Pet Adoption Center</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to Our Gym</h1>
+        <h1>Welcome to Our Pet Adoption Center</h1>
         <nav>
             <ul>
                 <li><a href="#home">Home</a></li>
-                <li><a href="#calculator">Calorie Calculator</a></li>
-                <li><a href="#membership">Membership</a></li>
+                <li><a href="#calculator">Care Cost Calculator</a></li>
+                <li><a href="#adoption">Adoption Inquiry</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
     <section id="home">
-        <h2>About Our Gym</h2>
-        <p>Get fit and healthy with us!</p>
+        <h2>About Our Pet Adoption Center</h2>
+        <p>Find your new furry friend and provide them with a loving home!</p>
     </section>
     <section id="calculator">
-        <h2>Calorie Burn Calculator</h2>
-        <form id="calorieForm">
-            <label for="intensity">Workout Intensity (1-10):</label>
-            <input type="number" id="intensity" name="intensity" required>
+        <h2>Pet Care Cost Calculator</h2>
+        <form id="careCostForm">
+            <label for="petType">Type of Pet:</label>
+            <select id="petType" name="petType" required>
+                <option value="dog">Dog</option>
+                <option value="cat">Cat</option>
+                <option value="rabbit">Rabbit</option>
+            </select>
             
-            <label for="duration">Duration (minutes):</label>
+            <label for="duration">Duration (months):</label>
             <input type="number" id="duration" name="duration" required>
 
-            <button type="button" onclick="calculateCalories()">Calculate</button>
+            <button type="button" onclick="calculateCareCost()">Calculate</button>
         </form>
-        <p id="caloriesResult"></p>
+        <p id="careCostResult"></p>
     </section>
-    <section id="membership">
-        <h2>Membership Inquiry</h2>
-        <form id="membershipForm">
+    <section id="adoption">
+        <h2>Adoption Inquiry</h2>
+        <form id="adoptionForm">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
             
@@ -66,7 +70,7 @@
         </form>
     </section>
     <footer>
-        <p>&copy; 2024 Our Gym</p>
+        <p>&copy; 2024 Pet Adoption Center</p>
     </footer>
     <script src="script.js"></script>
 </body>
